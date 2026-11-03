@@ -32,3 +32,4 @@ gcsu() {
 
 # Tell git to autocomplete `gcsu |` as though it was `git checkout |`
 __git_complete gcsu _git_checkout
+__git_complete git-jump _git_checkout
