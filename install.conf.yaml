@@ -1,0 +1,7 @@
+- link:
+    ~/.config/nvim: config
+
+- bashrc: ./bashrc
+
+- shell:
+    - [./install.sh, Installing nvim]
