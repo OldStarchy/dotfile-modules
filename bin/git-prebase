@@ -69,4 +69,4 @@ else
 fi
 
 git fetch
-git rebase $interactive_flag --autosquash "$prepare_base"
+git rebase $interactive_flag --autosquash --update-refs "$prepare_base"
