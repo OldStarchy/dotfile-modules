@@ -7,6 +7,11 @@
 	cif = commit --fixup
 	lga = log --graph --all
 	lg = "log --graph --all --format=\"%C(bold blue)%G? %C(auto)%h%d %s%C(reset)\""
+	# "Log Links" extract ticket ID's from trailers and turn them into clickable links
+	ll = !BASE=$(git config --get ll.base) && git log '--format="%C(auto)%h% G?%d% s %C(green)%x1b%x5d8;;'$BASE'%(trailers:key=Issue,valueonly,separator=%x1C)%x1b\\%(trailers:key=Issue,valueonly,separator=%x1C)%x1b%x5d8;;%x1b\\"' || (echo 'll.base not set. Use `git config ll.base https://tickets.example.com/group/browse/` to set it.' >&2 && exit 1)
+	# "Log Links Full" extract ticket ID's from trailers and turn them into clickable links with a full text link so that
+	# scrapers (such as VSCodes "Open detected link..." commands can find them)
+	llf = !BASE=$(git config --get ll.base) && git log '--format="%C(auto)%h% G?%d% s %C(green)%x1b%x5d8;;'$BASE'%(trailers:key=Issue,valueonly,separator=%x1C)%x1b\\'$BASE'%(trailers:key=Issue,valueonly,separator=%x1C)%x1b%x5d8;;%x1b\\"' || (echo 'll.base not set. Use `git config ll.base https://tickets.example.com/group/browse/` to set it.' >&2 && exit 1)
 	ca = commit --amend --no-edit
 	fp = fetch --prune
 	m = merge --no-ff
