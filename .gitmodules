@@ -1,3 +1,15 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "git"]
+	path = git
+	url = git@github.com:OldStarchy/dotfile-modules.git
+	branch = git
+[submodule "nvim"]
+	path = nvim
+	url = git@github.com:OldStarchy/dotfile-modules.git
+	branch = nvim
+[submodule "ssh-agent"]
+	path = ssh-agent
+	url = git@github.com:OldStarchy/dotfile-modules.git
+	branch = ssh-agent

@@ -1,0 +1,4 @@
+[include]
+	path = ./git/alias.gitconfig
+	path = ./git/template.gitconfig
+	path = ./git/etc.gitconfig

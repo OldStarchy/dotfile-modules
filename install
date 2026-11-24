@@ -1,12 +1,19 @@
 #!/usr/bin/env bash
 
-set -e
-
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
 
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+
+PYTHON=$(which python || which python3)
+set -e
+if [ -z "$PYTHON" ]; then
+	echo Installing python3
+	sudo apt update && sudo apt-get install -yq python3
+fi
+
 
 cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive

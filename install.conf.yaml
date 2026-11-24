@@ -1,0 +1,21 @@
+- plugins:
+    - ./dotbot-plugins/include/include.py
+    - ./dotbot-plugins/bashrc/bashrc.py
+
+- defaults:
+    link:
+      relink: true
+
+- shell:
+    - [git submodule update --init --recursive --rebase, Installing submodules]
+
+- clean: ['~']
+
+- link:
+    ~/.bash_aliases: bash_aliases
+
+- bashrc: ./bashrc
+
+- include: 'nvim/install.conf.yaml'
+- include: 'git/install.conf.yaml'
+- include: 'ssh-agent/install.conf.yaml'

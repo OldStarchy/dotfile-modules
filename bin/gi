@@ -1,0 +1,8 @@
+# Fix misspelled git commands eg. "gi tstatus" with "git status"
+if [ "${1:0:1}" = "t" ]; then
+	git ${1:1} ${@:2}
+else
+	echo gi not followed by t
+	exit 1
+fi
+
